@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    h1 
+      a(href="/") Quirky Web
+    include nav
+    h2 Console Login
+    form(action="/login" method="POST")
+      div
+        label(for="password") Password:
+        input#password(type="password" name="password" required)
+      div
+        button(type="submit") Login
+
