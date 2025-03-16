@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  .container
-    .container-fluid
+  .containersuggest
+    .container-fluid-suggest
       h1 
         a(href="/") The Quirky Web
       include navside
@@ -23,8 +23,8 @@ block content
           label(for="github") GitHub Repo URL:
           input#github(type="text" name="github" required placeholder="GitHub Repo URL")
         div
-          label#image(for="image") Image:
-          input#image(type="file" name="image" required placeholder="Upload Image")
+          label.custom-file-upload(for="file") Choose File
+          input#file(type="file" hidden)
         div
           button(type="button" id="submit") Suggest Website
     div#message
