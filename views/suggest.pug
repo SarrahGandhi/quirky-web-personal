@@ -25,6 +25,7 @@ block content
         div
           label.custom-file-upload(for="file") Choose File
           input#file(type="file" hidden)
+          div#file-name No file uploaded
         div
           button(type="button" id="submit") Suggest Website
     div#message
@@ -32,6 +33,8 @@ block content
       button(type="button" id="another") Make Another Suggestion
 
   script.
+
+
 
     const submit = document.getElementById('submit');
     const another = document.getElementById('another');
@@ -43,8 +46,8 @@ block content
 
     another.addEventListener('click', () => {  
 
-        form.style.display = "block";
-        message.style.display = "none";
+      form.style.display = "block";
+      message.style.display = "none";
 
     });
 
@@ -70,7 +73,7 @@ block content
         });
 
         const result = await response.json();
-        
+
         if (response.status == 200) {
 
           form.style.display = "none";
