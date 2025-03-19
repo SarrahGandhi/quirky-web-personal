@@ -26,6 +26,7 @@ block content
         let {_id, name, url, author, github, image, approved} = result[i];
 
         console.log(image);
+        if(approved){
 
         list.innerHTML += "<div class='site-box'>" + 
           "<a href=\"" + url + "\">" + 
@@ -38,6 +39,7 @@ block content
           "<br>" + author + 
           "</p>" + 
           "</div>";
+        }
 
       }
 
