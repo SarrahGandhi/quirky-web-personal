@@ -25,7 +25,7 @@ block content
 
       for(let i in result){
 
-        let {_id, name, url, author, github, image, approved} = result[i];
+        var {_id, name, url, author, github, image, approved} = result[i];
 
         console.log(image);
 
@@ -39,8 +39,8 @@ block content
           "<br>" + name + 
           "<br>" + author + 
           "</p>" + 
+          "<div #approve> Approved=" + approved + "</div>" +
           "</div>";
-
       }
 
     })();

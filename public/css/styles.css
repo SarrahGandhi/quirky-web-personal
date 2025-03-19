@@ -30,10 +30,6 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
-  position: absolute;
-  bottom: 20px; /* Adjust as needed */
-  left: 0;
-  right: 0;
 }
 #nav a {
   border-radius: 55px;
@@ -326,6 +322,10 @@ button:hover {
   justify-content: center;
   margin-top: 30px;
 }
+
+#loading{
+  text-align: center;
+}
 .random-box {
   display: inline-block;
   width: 600px;
@@ -361,4 +361,8 @@ button:hover {
 .random-box .author {
   color: red;
   font-weight: bold;
+}
+
+#message{
+  text-align: center;
 }

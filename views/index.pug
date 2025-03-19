@@ -5,32 +5,37 @@ block content
     .container-fluid-home
       h1.main_head
         a#home(href="/") The Quirky Web
-
-    .container-nav
-      include nav
-
     //- h2 TODO: Random Website Displayed Here
     div#random
+    p#loading Loading Website...
+    .container-nav
+      include nav
 
   script.
 
     (async function () {
+      
 
       const response = await fetch('/api/sites', {
         method: 'GET',
       });
 
       result = await response.json();
+      //- console.log("result: " + result );
+      //- console.log("result: " + result.length );
+
+      const randomItem = result[Math.floor(Math.random() * result.length)];
+
+      console.log("randomItem: " + randomItem );
 
       const list = document.getElementById("random");
+      const load = document.getElementById("loading");
+      //- console.log(list);
+      list.style.display = "none";
+      let {_id, name, url, author, github, image, approved} = randomItem;
 
-      for(let i in result){
-
-        let {_id, name, url, author, github, image, approved} = result[i];
-
-        console.log(image);
-
-        list.innerHTML += "<div class='random-box'>" + 
+      list.innerHTML = 
+          "<div class='random-box'>" + 
           "<a href=\"" + url + "\">" + 
           "<img src=\"/api/sites/" + _id + "/image\" width=\"200\">" + 
           "</a>" + 
@@ -42,7 +47,29 @@ block content
           "</p>" + 
           "</div>";
 
-      }
+      
+      setTimeout(()=>{
+        load.style.display = "none";
+        list.style.display = "flex";
+      },700)
+      //- for(let i in result){
+
+      //-   let {_id, name, url, author, github, image, approved} = result[i];
+
+
+      //-   list.innerHTML += "<div class='random-box'>" + 
+      //-     "<a href=\"" + url + "\">" + 
+      //-     "<img src=\"/api/sites/" + _id + "/image\" width=\"200\">" + 
+      //-     "</a>" + 
+      //-     "<p>" + 
+      //-     "<a href=\"" + url + "\"><i class=\"fa-solid fa-link\"></i></a>" +
+      //-     "<a href=\"" + github + "\"><i class=\"fa-brands fa-github\"></i></a>" +
+      //-     "<br>" + name + 
+      //-     "<br>" + author + 
+      //-     "</p>" + 
+      //-     "</div>";
+
+      //- }
 
     })();
 
