@@ -34,12 +34,20 @@ block content
 
   script.
 
-
-
     const submit = document.getElementById('submit');
     const another = document.getElementById('another');
     const form = document.getElementById('form');
     const message = document.getElementById('message');
+    function updateFileName() {
+      const fileInput = document.getElementById('file');
+      const fileNameDisplay = document.getElementById('file-name');
+
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.innerText = fileInput.files[0].name;
+      } else {
+        fileNameDisplay.innerText = 'No file uploaded';
+      }
+    }
 
     form.style.display = "block";
     message.style.display = "none";
