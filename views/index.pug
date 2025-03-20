@@ -30,6 +30,7 @@ block content
 
       const list = document.getElementById("random");
       const load = document.getElementById("loading");
+      const nav = document.getElementById("nav");
       //- console.log(list);
       list.style.display = "none";
       let {_id, name, url, author, github, image, approved} = randomItem;
@@ -49,6 +50,8 @@ block content
 
       
       setTimeout(()=>{
+        nav.style.marginTop = "20px";
+        nav.style.position = "revert";
         load.style.display = "none";
         list.style.display = "flex";
       },500)

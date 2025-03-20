@@ -15,6 +15,7 @@ const app = express();
 const path = require('path');
 const session = require('express-session');
 
+
 // **************************************************
 // Initialize session
 app.use(
@@ -41,7 +42,7 @@ app.set('view cache', false);
 // **************************************************
 // Set some default middleware
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
 // **************************************************
 // Set routes
@@ -80,11 +81,36 @@ mongoose.connect(uri)
     process.exit(1);
 });
 
+app.post("/manage/submit", async (request, response) => {
+  try {
+      const { webId } = request.body;
+
+      let website = await Site.Site.findById(webId);
+      console.log("Received webId:", webId);
+
+      if (website) {
+          website.approved = !website.approved;
+
+          await website.save();
+
+          console.log(`Updated approval status to: ${website.approved}`);
+      }
+
+      response.redirect("/manage");
+  } catch (error) {
+      console.error("Error updating approval status:", error);
+      response.status(500).send("Internal Server Error");
+  }
+});
+
+
+
+
 // **************************************************
 // Initializse app
 const server = app.listen(process.env.PORT, () => {
 
-    console.log("Server is running on port " + process.env.PORT);
+    console.log("Server is running on port http://localhost:" + process.env.PORT);
 
 });
 

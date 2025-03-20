@@ -335,7 +335,7 @@ button:hover {
 .author:hover {
   text-decoration: underline;
 }
-.site-box-info .delete-btn {
+.site-box-info .manage-btn {
   background-color: #ff6d5d;
   color: #fff;
   border-radius: 5px;
@@ -348,7 +348,7 @@ button:hover {
 
   margin-left: 0px;
 }
-.site-box-info .delete-btn:hover {
+.site-box-info .manage-btn:hover {
   background-color: #000000;
   border: 3px solid #ff6d5d;
   color: #fefefe;
@@ -400,6 +400,7 @@ button:hover {
   padding: 1rem;
   width: clamp(650px, 30%, 700px); /* Responsive width */
   align-self: center;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
