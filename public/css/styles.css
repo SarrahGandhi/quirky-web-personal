@@ -396,7 +396,7 @@ button:hover {
 .random-box {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 50px;
 
   background-color: #f9f9f9;
   border: 1px solid #000000;
@@ -457,6 +457,7 @@ button:hover {
   #nav {
     flex-direction: column;
     gap: 10px;
+    height: 30px;
     position: relative;
     padding: 30px;
   }
