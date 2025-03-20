@@ -12,7 +12,6 @@ body {
   text-shadow: 6px 7px 0px #000;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000000;
-
   font-family: "Lilita One";
   font-size: 121px;
   font-style: normal;
@@ -30,6 +29,10 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
 }
 #nav a {
   border-radius: 55px;
@@ -251,22 +254,35 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  margin-bottom: 100px;
+}
+#list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
 }
 .site-box {
   display: inline-block;
-  width: 220px;
+  width: 250px;
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
   text-align: center;
+  align-items: center;
+
   background-color: #f9f9f9;
   margin: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .site-box img {
-  width: 100%;
-  border-radius: 5px;
+  border-radius: 17px;
+  border: 1px solid #000;
+  width: 240px;
+  max-height: 100%;
+  object-fit: cover;
+  height: 167px;
 }
 
 .site-box p {
@@ -279,14 +295,64 @@ button:hover {
   color: black;
   margin: 0 5px;
 }
-
-.site-box a i {
-  font-size: 18px;
+.site-box-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
 
-.site-box .author {
-  color: red;
-  font-weight: bold;
+.site-box-info p,
+.site-box-info a {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ff6e5e;
+
+  text-align: center;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5px; /* 83.333% */
+}
+.name {
+  font-size: 24px;
+  text-shadow: 2px 2px 0px #000;
+}
+.name:hover {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.author {
+  color: #ff6e5e;
+  font-size: 20px;
+  text-shadow: none;
+}
+.author:hover {
+  text-decoration: underline;
+}
+.site-box-info .delete-btn {
+  background-color: #ff6d5d;
+  color: #fff;
+  border-radius: 5px;
+  border: 3px solid #000;
+  text-decoration: none;
+  padding: 10px 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 10px;
+
+  margin-left: 0px;
+}
+.site-box-info .delete-btn:hover {
+  background-color: #000000;
+  border: 3px solid #ff6d5d;
+  color: #fefefe;
+  text-shadow: none;
 }
 
 /* Manage Page Styling */
@@ -310,6 +376,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+  margin-bottom: 100px;
 }
 .container-manage h2 {
   color: #000000;
@@ -323,7 +390,7 @@ button:hover {
   margin-top: 30px;
 }
 
-#loading{
+#loading {
   text-align: center;
 }
 .random-box {
@@ -363,6 +430,6 @@ button:hover {
   font-weight: bold;
 }
 
-#message{
+#message {
   text-align: center;
 }
