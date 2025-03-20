@@ -300,7 +300,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  gap: 5px;
 }
 
 .site-box-info p,
