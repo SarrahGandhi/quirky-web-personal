@@ -31,11 +31,14 @@ block content
       const list = document.getElementById("random");
       const load = document.getElementById("loading");
       const nav = document.getElementById("nav");
+      let datafound = false
       //- console.log(list);
       list.style.display = "none";
       let {_id, name, url, author, github, image, approved} = randomItem;
 
-      list.innerHTML = 
+      if(approved){
+        datafound = true;
+        list.innerHTML = 
           "<div class='random-box'>" + 
           "<a href=\"" + url + "\">" + 
           "<img src=\"/api/sites/" + _id + "/image\" width=\"200\">" + 
@@ -47,13 +50,19 @@ block content
           "<br>" + author + 
           "</p>" + 
           "</div>";
+      }
 
       
       setTimeout(()=>{
-        nav.style.marginTop = "20px";
-        nav.style.position = "revert";
-        load.style.display = "none";
-        list.style.display = "flex";
+        if(datafound){
+          nav.style.marginTop = "20px";
+          nav.style.position = "revert";
+          load.style.display = "none";
+          list.style.display = "flex";
+        }else{
+          load.innerHTML = "Unable to fetch data, Please contact Admin"
+          console.log("ERROR: No Websites added OR Check Approvals");
+        }
       },500)
       //- for(let i in result){
 

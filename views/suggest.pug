@@ -115,10 +115,5 @@ block content
       }
     });
 
-    // Handle file input click event to trigger the file picker
-    document.querySelector('label.custom-file-upload').addEventListener('click', () => {
-      document.getElementById('file').click();  // Trigger file input click
-    });
-
     // Update file name display when a file is selected
     document.getElementById('file').addEventListener('change', updateFileName);
