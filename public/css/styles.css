@@ -394,10 +394,6 @@ button:hover {
   text-align: center;
 }
 .random-box {
-  position: absolute;
-  top: 0;
-  bottom: 50px;
-
   background-color: #f9f9f9;
   border: 1px solid #000000;
   border-radius: 0.5rem;
