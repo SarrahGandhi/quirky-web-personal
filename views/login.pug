@@ -6,7 +6,7 @@ block content
       h1 
         a(href="/") The Quirky Web
       include navside
-    h2 Console Login
+    h2#loginpage Console Login
     form(action="/login" method="POST")
       div
         label(for="password") Password:
@@ -16,7 +16,7 @@ block content
   script.
     const hamburger = document.getElementById("hamburger");
     const menulinks = document.getElementById("menulinks");
-    const content = document.getElementById('list');
+    const content = document.getElementById('loginpage');
 
     hamburger.addEventListener("click", () => {
       menulinks.classList.toggle("show");

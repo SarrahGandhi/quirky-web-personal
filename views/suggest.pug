@@ -6,7 +6,7 @@ block content
       h1 
         a(href="/") The Quirky Web
       include navside
-    h2 Suggest a Website
+    h2#suggestform Suggest a Website
     div#form
       form(enctype="multipart/form-data")
         div#error
@@ -36,7 +36,7 @@ block content
 
     const hamburger = document.getElementById("hamburger");
     const menulinks = document.getElementById("menulinks");
-    const content = document.getElementById('list');
+    const content = document.getElementById('suggestform');
 
     hamburger.addEventListener("click", () => {
       menulinks.classList.toggle("show");
