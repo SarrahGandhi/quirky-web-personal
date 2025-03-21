@@ -65,6 +65,9 @@ body {
   margin-right: 30px;
   gap: 20px;
 }
+.menu-icon {
+  display: none;
+}
 #navside a {
   color: #fff;
 
@@ -261,6 +264,7 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 .site-box {
   display: inline-block;
@@ -270,7 +274,7 @@ button:hover {
   border-radius: 10px;
   text-align: center;
   align-items: center;
-
+  white-space: normal;
   background-color: #f9f9f9;
   margin: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -410,26 +414,49 @@ button:hover {
   height: auto;
   border-radius: 0.5rem;
   object-fit: cover;
+  height: 400px;
+  border: 1px solid #000000;
 }
 
 .random-box p {
-  font-size: 20px;
   margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ff6e5e;
+  text-align: center;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 83.333% */
+  text-shadow: 4px 4px 0px #000;
 }
 
 .random-box a {
   text-decoration: none;
-  color: black;
-  margin: 0 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ff6e5e;
+  text-align: center;
+  font-size: 24px;
+  text-shadow: 4px 4px 0px #000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Lilita One";
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px; /* 83.333% */
+}
+.random-box a:hover {
+  text-decoration: underline;
+  text-shadow: none;
 }
 
 .random-box a i {
   font-size: 18px;
-}
-
-.random-box .author {
-  color: red;
-  font-weight: bold;
 }
 
 #message {
@@ -454,8 +481,7 @@ button:hover {
   #nav {
     flex-direction: column;
     gap: 10px;
-    height: 30px;
-    position: relative;
+    text-align: center;
     padding: 30px;
   }
   #nav a {
@@ -473,5 +499,33 @@ button:hover {
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 187.5% */
+  }
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-icon i {
+    font-size: 30px;
+  }
+  #navside {
+    display: none;
+  }
+  .container-fluid-list,
+  .container-fluid-manage,
+  .container-fluid-suggest,
+  .container-fluid-login,
+  .container-fluid-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  #list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
   }
 }
