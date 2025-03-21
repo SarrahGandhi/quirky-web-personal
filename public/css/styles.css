@@ -65,7 +65,7 @@ body {
   margin-right: 30px;
   gap: 20px;
 }
-.menu-icon {
+#hamburger {
   display: none;
 }
 #navside a {
@@ -124,6 +124,7 @@ form {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin: 10px;
 }
 label {
   display: none;
@@ -491,8 +492,10 @@ button:hover {
     background: #000;
     color: #fbf42c;
     text-align: center;
+    align-items: center;
     text-shadow: 6px 7px 0px #000;
     -webkit-text-stroke-width: 1px;
+    border-radius: 15px;
 
     font-family: "Lilita One";
     font-size: 24px;
@@ -500,26 +503,77 @@ button:hover {
     font-weight: 400;
     line-height: 20px; /* 187.5% */
   }
-  .menu-icon {
-    display: block;
+  #navside a {
+    border: 4px solid #ff6d5d;
+    color: #fff;
+    margin: 0px 30px;
+    width: 150px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border-radius: 25px;
   }
-
-  .menu-icon i {
-    font-size: 30px;
-  }
-  #navside {
+  #menulinks {
     display: none;
   }
-  .container-fluid-list,
-  .container-fluid-manage,
-  .container-fluid-suggest,
-  .container-fluid-login,
-  .container-fluid-home {
+  #hamburger {
+    display: block;
+    padding: 5px;
+    line-height: 20px;
+    border-radius: 5px;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  #menulinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  #menulinks a {
+    padding: 12px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #menulinks.show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    padding: 10px 0;
+    /* align-items: flex-end; */
+    gap: 20px;
+  }
+  #menulinks.show a button {
+    border-radius: 10px;
+  }
+  .container-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .container-fluid-list,
+  .container-fluid-manage,
+  .container-fluid-suggest,
+  .container-fluid-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 30px;
+  }
+  .container-fluid-home {
+    justify-content: center;
   }
   #list {
     flex-direction: row;
@@ -527,5 +581,44 @@ button:hover {
     align-items: center;
     justify-self: center;
     align-self: center;
+    transition: margin-top;
+  }
+  /* Suggest page styling */
+  form {
+    box-sizing: border-box;
+  }
+  input {
+    overflow: hidden;
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+}
+@media screen and (max-width: 450px) {
+  input {
+    max-width: 280px;
+  }
+  .container-fluid-home h1 a,
+  .container-fluid-list h1 a,
+  .container-fluid-suggest h1 a,
+  .container-fluid-login h1 a,
+  .container-fluid-manage h1 a {
+    font-size: 32px;
+  }
+
+  #navside a {
+    align-self: center;
+  }
+  #menulinks.show {
+    top: 150px;
+    align-items: center;
+  }
+  .container-fluid-list,
+  .container-fluid-suggest,
+  .container-fluid-login,
+  .container-fluid-manage {
+    margin-bottom: 10px;
+  }
+  #menulinks.show {
+    top: 100px;
   }
 }

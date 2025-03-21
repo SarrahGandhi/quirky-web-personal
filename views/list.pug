@@ -12,6 +12,22 @@ block content
 
 
   script.
+    const hamburger = document.getElementById("hamburger");
+    const menulinks = document.getElementById("menulinks");
+    const content = document.getElementById('list');
+
+    hamburger.addEventListener("click", () => {
+      menulinks.classList.toggle("show");
+      if (menulinks.classList.contains('show')) {
+        content.style.marginTop = menulinks.offsetHeight +"px";
+      } else {
+        content.style.marginTop = '0';
+      } 
+    });
+    // Select elements
+
+
+
 
     (async function () {
 
